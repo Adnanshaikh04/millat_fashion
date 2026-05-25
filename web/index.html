@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <base href="$FLUTTER_BASE_HREF">
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="description" content="Millat Fashion Kids Wear - Trendy, comfortable, and affordable clothing for children.">
+  <meta name="keywords" content="kids wear, kids fashion, children clothing, Millat Fashion">
+  <meta name="author" content="Millat Fashion">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Millat Fashion Kids Wear">
+  <meta property="og:description" content="Style your little stars! Discover trendy kids fashion.">
+  <meta property="og:type" content="website">
+  
+  <!-- Mobile -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Millat Fashion">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+  <title>Millat Fashion Kids Wear - Style Your Little Stars!</title>
+  
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/png" href="favicon.png"/>
+  
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    
+    #loading {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #FFF8F0, #E3F2FD, #F3E5F5);
+      font-family: 'Poppins', sans-serif;
+      z-index: 9999;
+      transition: opacity 0.5s ease-out;
+    }
+    
+    #loading.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+    
+    .loading-logo {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, #E53935, #FF9800, #FDD835, #43A047, #1E88E5);
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 28px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      animation: pulse 1.5s ease-in-out infinite;
+    }
+    
+    .loading-text {
+      font-size: 24px;
+      font-weight: 700;
+      background: linear-gradient(135deg, #E53935, #FF9800, #43A047, #1E88E5);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 5px;
+    }
+    
+    .loading-subtitle {
+      font-size: 12px;
+      color: #E53935;
+      font-weight: 600;
+      letter-spacing: 2px;
+    }
+    
+    .loading-bar {
+      width: 200px;
+      height: 4px;
+      background: #E0E0E0;
+      border-radius: 2px;
+      margin-top: 30px;
+      overflow: hidden;
+    }
+    
+    .loading-progress {
+      height: 100%;
+      background: linear-gradient(90deg, #E53935, #FF9800, #FDD835, #43A047, #1E88E5, #8E24AA);
+      border-radius: 2px;
+      animation: loading 2s ease-in-out infinite;
+    }
+    
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+    
+    @keyframes loading {
+      0% { width: 0%; margin-left: 0%; }
+      50% { width: 70%; margin-left: 15%; }
+      100% { width: 0%; margin-left: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Loading Screen -->
+  <div id="loading">
+    <div class="loading-logo">MF</div>
+    <div class="loading-text">Millat</div>
+    <div class="loading-subtitle">FASHION KIDS WEAR</div>
+    <div class="loading-bar">
+      <div class="loading-progress"></div>
+    </div>
+  </div>
+  
+  <!-- Flutter bootstrap script -->
+  <script src="flutter_bootstrap.js" async></script>
+  
+  <script>
+    // Hide loading screen when Flutter is ready
+    window.addEventListener('flutter-first-frame', function () {
+      const loading = document.getElementById('loading');
+      if (loading) {
+        loading.classList.add('hidden');
+        setTimeout(() => {
+          loading.remove();
+        }, 500);
+      }
+    });
+  </script>
+</body>
+</html>
