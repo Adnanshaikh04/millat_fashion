@@ -77,7 +77,7 @@ class WhyChooseUsSection extends StatelessWidget {
                   crossAxisCount: crossAxisCount,
                   crossAxisSpacing: 24,
                   mainAxisSpacing: 24,
-                  childAspectRatio: Responsive.isMobile(context) ? 2.5 : 1.5,
+                  childAspectRatio: Responsive.isMobile(context) ? 2.0 : 1.5,
                 ),
                 itemCount: features.length,
                 itemBuilder: (context, index) {
